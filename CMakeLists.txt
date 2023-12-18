@@ -9,3 +9,4 @@ if (MSVC)
 endif()
 
 add_executable(skip_use main.cpp MSkipList.hpp)
+add_executable(skip_test stress.cpp MSkipList.hpp)
