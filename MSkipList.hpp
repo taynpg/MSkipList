@@ -11,8 +11,8 @@ class SkipList {
 public:
     // 插入数据
     void insert(const T& key, const P& value);
-    // 删除数据（若没有找到节点返回失败）
-    bool remove(const T& key);
+    // 删除数据
+    void remove(const T& key);
     // 查询数据
     bool search(const T& key, P& value);
     // 是否包含某个数据
@@ -197,7 +197,7 @@ inline void SkipList<T, P>::insert(const T& key, const P& value)
 }
 
 template <typename T, typename P>
-inline bool SkipList<T, P>::remove(const T& key)
+inline void SkipList<T, P>::remove(const T& key)
 {
     memset(pre_, 0x0, sizeof(SkipNode*) * max_level_);
     SkipNode* x = header_;
@@ -227,7 +227,6 @@ inline bool SkipList<T, P>::remove(const T& key)
     }
     delete purpose;
     --count_;
-    return true;
 }
 
 template <typename T, typename P>
