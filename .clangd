@@ -1,0 +1,7 @@
+Hover:
+    ShowAKA: Yes
+Diagnostics:
+    UnusedIncludes: None
+    Suppress: [anon_type_definition]
+    ClangTidy:
+        Remove: misc-unused-alias-decls
